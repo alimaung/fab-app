@@ -1,0 +1,1883 @@
+.page-segments {
+    background: #fff;
+    left: 1em;
+    margin-top: -1em;
+    padding-top: 1em;
+    position: fixed;
+    width: calc(100% - 2em);
+    z-index: 50
+}
+
+.page-segment-icon {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-bottom: -.25em;
+    margin-right: .5ch
+}
+
+.page-content {
+    padding-top: 4em
+}
+
+.link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline
+}
+
+.link:hover {
+    color: #0056b3
+}
+
+.link:active {
+    color: #003f83
+}
+
+.v-popper__inner {
+    border-radius: .3ch !important;
+    font-size: .85em
+}
+
+[tooltip] {
+    position: relative
+}
+
+[tooltip]:after,
+[tooltip]:before {
+    display: block;
+    font-size: .9em;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+    text-transform: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    z-index: 1001
+}
+
+[tooltip]:before {
+    border: 5px solid transparent;
+    content: ""
+}
+
+[tooltip]:after {
+    background: #333;
+    border-radius: .3ch;
+    box-shadow: 0 1em 2em -.5em #00000059;
+    color: #fff;
+    content: attr(tooltip);
+    font-family: Helvetica, sans-serif;
+    max-width: 21em;
+    min-width: 3em;
+    overflow: hidden;
+    padding: 1ch 1.5ch;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1000
+}
+
+[tooltip=""]:after,
+[tooltip=""]:before {
+    display: none !important
+}
+
+[tooltip]:not([flow]):before,
+[tooltip][flow^=up]:before {
+    border-bottom-width: 0;
+    border-top-color: #333;
+    bottom: calc(100% + 3.25px)
+}
+
+[tooltip]:not([flow]):after,
+[tooltip][flow^=up]:after {
+    bottom: calc(100% + 7.75px)
+}
+
+[tooltip]:not([flow]):after,
+[tooltip]:not([flow]):before,
+[tooltip][flow^=up]:after,
+[tooltip][flow^=up]:before {
+    left: 50%;
+    transform: translate(-50%, -.5em)
+}
+
+[tooltip][flow^=down]:before {
+    border-bottom-color: #333;
+    border-top-width: 0;
+    top: calc(100% + 3.25px)
+}
+
+[tooltip][flow^=down]:after {
+    top: calc(100% + 7.75px)
+}
+
+[tooltip][flow^=down]:after,
+[tooltip][flow^=down]:before {
+    left: 50%;
+    transform: translate(-50%, .5em)
+}
+
+[tooltip][flow^=left]:before {
+    border-left-color: #333;
+    border-right-width: 0;
+    right: calc(100% + 3.25px);
+    top: 50%;
+    transform: translate(-.5em, -50%)
+}
+
+[tooltip][flow^=left]:after {
+    right: calc(100% + 7.75px);
+    top: 50%;
+    transform: translate(-.5em, -50%)
+}
+
+[tooltip][flow^=right]:before {
+    border-left-width: 0;
+    border-right-color: #333;
+    left: calc(100% + 3.25px);
+    top: 50%;
+    transform: translate(.5em, -50%)
+}
+
+[tooltip][flow^=right]:after {
+    left: calc(100% + 7.75px);
+    top: 50%;
+    transform: translate(.5em, -50%)
+}
+
+[tooltip]:after,
+[tooltip]:before {
+    opacity: 0;
+    transition: all .1s ease-out
+}
+
+[tooltip]:hover:after,
+[tooltip]:hover:before {
+    opacity: .9;
+    transition: all .3s ease-out
+}
+
+[tooltip]:not([flow]):after,
+[tooltip]:not([flow]):before,
+[tooltip][flow^=up]:after,
+[tooltip][flow^=up]:before {
+    transform: translate(-50%, 5px)
+}
+
+[tooltip]:not([flow]):hover:after,
+[tooltip]:not([flow]):hover:before,
+[tooltip][flow^=up]:hover:after,
+[tooltip][flow^=up]:hover:before {
+    transform: translate(-50%)
+}
+
+[tooltip][flow^=down]:after,
+[tooltip][flow^=down]:before {
+    transform: translate(-50%, -5px)
+}
+
+[tooltip][flow^=down]:hover:after,
+[tooltip][flow^=down]:hover:before {
+    transform: translate(-50%)
+}
+
+[tooltip][flow^=left]:after,
+[tooltip][flow^=left]:before {
+    transform: translate(5px, -50%)
+}
+
+[tooltip][flow^=left]:hover:after,
+[tooltip][flow^=left]:hover:before {
+    transform: translateY(-50%)
+}
+
+[tooltip][flow^=right]:after,
+[tooltip][flow^=right]:before {
+    transform: translate(-5px, -50%)
+}
+
+[tooltip][flow^=right]:hover:after,
+[tooltip][flow^=right]:hover:before {
+    transform: translateY(-50%)
+}
+
+.tt[tooltip] {
+    display: inline-block
+}
+
+.tt-err[tooltip]:before {
+    border-top-color: #c00
+}
+
+.tt-err[tooltip]:after {
+    background-color: #c00;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23fff' d='M256 48C141.6 48 48 141.601 48 256s93.6 208 208 208 208-93.601 208-208S370.4 48 256 48m24 312h-48v-40h48zm0-88h-48V144h48z'/%3E%3C/svg%3E");
+    background-position: 7px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: calc(3ch + 7px)
+}
+
+:root {
+    --ion-color-primary: #0054e9;
+    --ion-color-primary-rgb: 0, 84, 233;
+    --ion-color-primary-contrast: #fff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #004acd;
+    --ion-color-primary-tint: #1a65eb;
+    --ion-color-secondary: #0163aa;
+    --ion-color-secondary-rgb: 1, 99, 170;
+    --ion-color-secondary-contrast: #fff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #015796;
+    --ion-color-secondary-tint: #1a73b3;
+    --ion-color-tertiary: #6030ff;
+    --ion-color-tertiary-rgb: 96, 48, 255;
+    --ion-color-tertiary-contrast: #fff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #542ae0;
+    --ion-color-tertiary-tint: #7045ff;
+    --ion-color-success: #2dd55b;
+    --ion-color-success-rgb: 45, 213, 91;
+    --ion-color-success-contrast: #000;
+    --ion-color-success-contrast-rgb: 0, 0, 0;
+    --ion-color-success-shade: #28bb50;
+    --ion-color-success-tint: #42d96b;
+    --ion-color-warning: #ffc409;
+    --ion-color-warning-rgb: 255, 196, 9;
+    --ion-color-warning-contrast: #000;
+    --ion-color-warning-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-shade: #e0ac08;
+    --ion-color-warning-tint: #ffca22;
+    --ion-color-danger: #c5000f;
+    --ion-color-danger-rgb: 197, 0, 15;
+    --ion-color-danger-contrast: #fff;
+    --ion-color-danger-contrast-rgb: 255, 255, 255;
+    --ion-color-danger-shade: #ad000d;
+    --ion-color-danger-tint: #cb1a27;
+    --ion-color-light: #f4f5f8;
+    --ion-color-light-rgb: 244, 245, 248;
+    --ion-color-light-contrast: #000;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #d7d8da;
+    --ion-color-light-tint: #f5f6f9;
+    --ion-color-medium: #636469;
+    --ion-color-medium-rgb: 99, 100, 105;
+    --ion-color-medium-contrast: #fff;
+    --ion-color-medium-contrast-rgb: 255, 255, 255;
+    --ion-color-medium-shade: #57585c;
+    --ion-color-medium-tint: #737478;
+    --ion-color-dark: #222428;
+    --ion-color-dark-rgb: 34, 36, 40;
+    --ion-color-dark-contrast: #fff;
+    --ion-color-dark-contrast-rgb: 255, 255, 255;
+    --ion-color-dark-shade: #1e2023;
+    --ion-color-dark-tint: #383a3e
+    --ion-color-ali: #
+}
+
+html.ios {
+    --ion-default-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif
+}
+
+html.md {
+    --ion-default-font: "Roboto", "Helvetica Neue", sans-serif
+}
+
+html {
+    --ion-dynamic-font: -apple-system-body;
+    --ion-font-family: var(--ion-default-font)
+}
+
+body {
+    background: var(--ion-background-color);
+    color: var(--ion-text-color)
+}
+
+body.backdrop-no-scroll {
+    overflow: hidden
+}
+
+html.ios ion-modal ion-footer ion-toolbar:first-of-type,
+html.ios ion-modal.modal-card ion-header ion-toolbar:first-of-type,
+html.ios ion-modal.modal-sheet ion-header ion-toolbar:first-of-type {
+    padding-top: 6px
+}
+
+html.ios ion-modal.modal-card ion-header ion-toolbar:last-of-type,
+html.ios ion-modal.modal-sheet ion-header ion-toolbar:last-of-type {
+    padding-bottom: 6px
+}
+
+html.ios ion-modal ion-toolbar {
+    padding-left: calc(var(--ion-safe-area-left) + 8px);
+    padding-right: calc(var(--ion-safe-area-right) + 8px)
+}
+
+@media screen and (min-width:768px) {
+    html.ios ion-modal.modal-card:first-of-type {
+        --backdrop-opacity: .18
+    }
+}
+
+ion-modal.modal-default.show-modal~ion-modal.modal-default {
+    --backdrop-opacity: 0;
+    --box-shadow: none
+}
+
+html.ios ion-modal.modal-card .ion-page {
+    border-top-left-radius: var(--border-radius)
+}
+
+.ion-color-primary {
+    --ion-color-base: var(--ion-color-primary, #0054e9) !important;
+    --ion-color-base-rgb: var(--ion-color-primary-rgb, 0, 84, 233) !important;
+    --ion-color-contrast: var(--ion-color-primary-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-primary-shade, #004acd) !important;
+    --ion-color-tint: var(--ion-color-primary-tint, #1a65eb) !important
+}
+
+.ion-color-secondary {
+    --ion-color-base: var(--ion-color-secondary, #0163aa) !important;
+    --ion-color-base-rgb: var(--ion-color-secondary-rgb, 1, 99, 170) !important;
+    --ion-color-contrast: var(--ion-color-secondary-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-secondary-shade, #015796) !important;
+    --ion-color-tint: var(--ion-color-secondary-tint, #1a73b3) !important
+}
+
+.ion-color-tertiary {
+    --ion-color-base: var(--ion-color-tertiary, #6030ff) !important;
+    --ion-color-base-rgb: var(--ion-color-tertiary-rgb, 96, 48, 255) !important;
+    --ion-color-contrast: var(--ion-color-tertiary-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-tertiary-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-tertiary-shade, #542ae0) !important;
+    --ion-color-tint: var(--ion-color-tertiary-tint, #7045ff) !important
+}
+
+.ion-color-success {
+    --ion-color-base: var(--ion-color-success, #2dd55b) !important;
+    --ion-color-base-rgb: var(--ion-color-success-rgb, 45, 213, 91) !important;
+    --ion-color-contrast: var(--ion-color-success-contrast, #000) !important;
+    --ion-color-contrast-rgb: var(--ion-color-success-contrast-rgb, 0, 0, 0) !important;
+    --ion-color-shade: var(--ion-color-success-shade, #28bb50) !important;
+    --ion-color-tint: var(--ion-color-success-tint, #42d96b) !important
+}
+
+.ion-color-warning {
+    --ion-color-base: var(--ion-color-warning, #ffc409) !important;
+    --ion-color-base-rgb: var(--ion-color-warning-rgb, 255, 196, 9) !important;
+    --ion-color-contrast: var(--ion-color-warning-contrast, #000) !important;
+    --ion-color-contrast-rgb: var(--ion-color-warning-contrast-rgb, 0, 0, 0) !important;
+    --ion-color-shade: var(--ion-color-warning-shade, #e0ac08) !important;
+    --ion-color-tint: var(--ion-color-warning-tint, #ffca22) !important
+}
+
+.ion-color-danger {
+    --ion-color-base: var(--ion-color-danger, #c5000f) !important;
+    --ion-color-base-rgb: var(--ion-color-danger-rgb, 197, 0, 15) !important;
+    --ion-color-contrast: var(--ion-color-danger-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-danger-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-danger-shade, #ad000d) !important;
+    --ion-color-tint: var(--ion-color-danger-tint, #cb1a27) !important
+}
+
+.ion-color-light {
+    --ion-color-base: var(--ion-color-light, #f4f5f8) !important;
+    --ion-color-base-rgb: var(--ion-color-light-rgb, 244, 245, 248) !important;
+    --ion-color-contrast: var(--ion-color-light-contrast, #000) !important;
+    --ion-color-contrast-rgb: var(--ion-color-light-contrast-rgb, 0, 0, 0) !important;
+    --ion-color-shade: var(--ion-color-light-shade, #d7d8da) !important;
+    --ion-color-tint: var(--ion-color-light-tint, #f5f6f9) !important
+}
+
+.ion-color-medium {
+    --ion-color-base: var(--ion-color-medium, #636469) !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 99, 100, 105) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-medium-shade, #57585c) !important;
+    --ion-color-tint: var(--ion-color-medium-tint, #737478) !important
+}
+
+.ion-color-dark {
+    --ion-color-base: var(--ion-color-dark, #222428) !important;
+    --ion-color-base-rgb: var(--ion-color-dark-rgb, 34, 36, 40) !important;
+    --ion-color-contrast: var(--ion-color-dark-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-dark-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: var(--ion-color-dark-shade, #1e2023) !important;
+    --ion-color-tint: var(--ion-color-dark-tint, #383a3e) !important
+}
+
+.ion-page {
+    bottom: 0;
+    contain: layout size style;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0
+}
+
+ion-modal>.ion-page {
+    contain: layout style;
+    height: 100%;
+    position: relative
+}
+
+.split-pane-visible>.ion-page.split-pane-main {
+    position: relative
+}
+
+.ion-page-hidden,
+ion-action-sheet-controller,
+ion-alert-controller,
+ion-loading-controller,
+ion-menu-controller,
+ion-modal-controller,
+ion-nav-controller,
+ion-picker-controller,
+ion-popover-controller,
+ion-route,
+ion-route-redirect,
+ion-router,
+ion-select-option,
+ion-toast-controller {
+    display: none !important
+}
+
+.ion-page-invisible {
+    opacity: 0
+}
+
+.can-go-back>ion-header ion-back-button {
+    display: block
+}
+
+html.plt-ios.plt-hybrid,
+html.plt-ios.plt-pwa {
+    --ion-statusbar-padding: 20px
+}
+
+@supports (padding-top:20px) {
+    html {
+        --ion-safe-area-top: var(--ion-statusbar-padding)
+    }
+}
+
+@supports (padding-top:env(safe-area-inset-top)) {
+    html {
+        --ion-safe-area-top: env(safe-area-inset-top);
+        --ion-safe-area-bottom: env(safe-area-inset-bottom);
+        --ion-safe-area-left: env(safe-area-inset-left);
+        --ion-safe-area-right: env(safe-area-inset-right)
+    }
+}
+
+ion-card-header.ion-color .ion-inherit-color,
+ion-card.ion-color .ion-inherit-color {
+    color: inherit
+}
+
+.menu-content {
+    transform: translateZ(0)
+}
+
+.menu-content-open {
+    cursor: pointer;
+    overflow-y: hidden;
+    pointer-events: none;
+    touch-action: manipulation
+}
+
+.menu-content-open ion-content {
+    --overflow: hidden
+}
+
+.menu-content-open .ion-content-scroll-host {
+    overflow: hidden
+}
+
+.ios .menu-content-reveal {
+    box-shadow: -8px 0 42px #00000014
+}
+
+[dir=rtl].ios .menu-content-reveal {
+    box-shadow: 8px 0 42px #00000014
+}
+
+.md .menu-content-push,
+.md .menu-content-reveal {
+    box-shadow: 4px 0 16px #0000002e
+}
+
+ion-accordion-group.accordion-group-expand-inset>ion-accordion:first-of-type {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px
+}
+
+ion-accordion-group.accordion-group-expand-inset>ion-accordion:last-of-type {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px
+}
+
+ion-accordion-group>ion-accordion:last-of-type ion-item[slot=header] {
+    --border-width: 0px
+}
+
+ion-accordion.accordion-animated>[slot=header] .ion-accordion-toggle-icon {
+    transition: transform .3s cubic-bezier(.25, .8, .5, 1)
+}
+
+@media (prefers-reduced-motion:reduce) {
+    ion-accordion .ion-accordion-toggle-icon {
+        transition: none !important
+    }
+}
+
+ion-accordion.accordion-expanded>[slot=header] .ion-accordion-toggle-icon,
+ion-accordion.accordion-expanding>[slot=header] .ion-accordion-toggle-icon {
+    transform: rotate(180deg)
+}
+
+ion-accordion-group.accordion-group-expand-inset.md>ion-accordion.accordion-previous ion-item[slot=header] {
+    --border-width: 0px;
+    --inner-border-width: 0px
+}
+
+ion-accordion-group.accordion-group-expand-inset.md>ion-accordion.accordion-expanded:first-of-type,
+ion-accordion-group.accordion-group-expand-inset.md>ion-accordion.accordion-expanding:first-of-type {
+    margin-top: 0
+}
+
+ion-input input::-webkit-date-and-time-value {
+    text-align: start
+}
+
+.ion-datetime-button-overlay {
+    --width: fit-content;
+    --height: fit-content
+}
+
+.ion-datetime-button-overlay ion-datetime.datetime-grid {
+    min-height: 320px;
+    width: 320px
+}
+
+[ion-last-focus],
+[role=banner][tabindex="-1"]:focus,
+[role=heading][aria-level="1"][tabindex="-1"]:focus,
+[role=main][tabindex="-1"]:focus,
+h1[tabindex="-1"]:focus,
+header[tabindex="-1"]:focus,
+main[tabindex="-1"]:focus {
+    outline: none
+}
+
+.popover-viewport:has(>ion-content) {
+    overflow: hidden
+}
+
+@supports not selector(:has(> ion-content)) {
+    .popover-viewport {
+        overflow: hidden
+    }
+}
+
+audio,
+canvas,
+progress,
+video {
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+b,
+strong {
+    font-weight: 700
+}
+
+img {
+    max-width: 100%
+}
+
+hr {
+    border-width: 0;
+    box-sizing: content-box;
+    height: 1px
+}
+
+pre {
+    overflow: auto
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+input,
+label,
+select,
+textarea {
+    font-family: inherit;
+    line-height: normal
+}
+
+textarea {
+    color: inherit;
+    font: inherit;
+    height: auto;
+    overflow: auto
+}
+
+textarea::-moz-placeholder {
+    padding-left: 2px
+}
+
+textarea::placeholder {
+    padding-left: 2px
+}
+
+form,
+input,
+optgroup,
+select {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+.ion-tappable,
+[tappable],
+[tappable] div,
+[tappable] ion-icon,
+[tappable] ion-label,
+[tappable] span,
+a,
+a div,
+a ion-icon,
+a ion-label,
+a span,
+button,
+button div,
+button ion-icon,
+button ion-label,
+button span,
+input,
+textarea {
+    touch-action: manipulation
+}
+
+a ion-label,
+button ion-label {
+    pointer-events: none
+}
+
+button {
+    -webkit-appearance: button;
+    border: 0;
+    border-radius: 0;
+    font-family: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    line-height: 1;
+    padding: 0;
+    text-transform: none
+}
+
+[tappable],
+button {
+    cursor: pointer
+}
+
+a[disabled],
+button[disabled],
+html input[disabled] {
+    cursor: default
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td,
+th {
+    padding: 0
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%
+}
+
+html:not(.hydrated) body {
+    display: none
+}
+
+html.ion-ce body {
+    display: block
+}
+
+html.plt-pwa {
+    height: 100vh
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    margin: 0;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    text-rendering: optimizeLegibility;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    width: 100%;
+    -webkit-user-drag: none;
+    -ms-content-zooming: none;
+    word-wrap: break-word;
+    overscroll-behavior-y: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none
+}
+
+html {
+    font-family: var(--ion-font-family)
+}
+
+@supports (-webkit-touch-callout:none) {
+    html {
+        font: var(--ion-dynamic-font, 16px var(--ion-font-family))
+    }
+}
+
+a {
+    background-color: transparent;
+    color: var(--ion-color-primary, #0054e9)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    margin-top: 16px
+}
+
+h1 {
+    font-size: 1.625rem;
+    margin-top: 20px
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 18px
+}
+
+h3 {
+    font-size: 1.375rem
+}
+
+h4 {
+    font-size: 1.25rem
+}
+
+h5 {
+    font-size: 1.125rem
+}
+
+h6 {
+    font-size: 1rem
+}
+
+small,
+sub,
+sup {
+    font-size: 75%
+}
+
+sub,
+sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+.ion-no-padding {
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    padding: 0
+}
+
+.ion-padding {
+    --padding-start: var(--ion-padding, 16px);
+    --padding-end: var(--ion-padding, 16px);
+    --padding-top: var(--ion-padding, 16px);
+    --padding-bottom: var(--ion-padding, 16px);
+    padding-inline-end: var(--ion-padding, 16px);
+    padding-bottom: var(--ion-padding, 16px);
+    padding-inline-start: var(--ion-padding, 16px)
+}
+
+.ion-padding,
+.ion-padding-top {
+    padding-top: var(--ion-padding, 16px)
+}
+
+.ion-padding-top {
+    --padding-top: var(--ion-padding, 16px)
+}
+
+.ion-padding-start {
+    --padding-start: var(--ion-padding, 16px);
+    padding-inline-start: var(--ion-padding, 16px)
+}
+
+.ion-padding-end {
+    --padding-end: var(--ion-padding, 16px);
+    padding-inline-end: var(--ion-padding, 16px)
+}
+
+.ion-padding-bottom {
+    --padding-bottom: var(--ion-padding, 16px);
+    padding-bottom: var(--ion-padding, 16px)
+}
+
+.ion-padding-vertical {
+    --padding-top: var(--ion-padding, 16px);
+    --padding-bottom: var(--ion-padding, 16px);
+    padding-bottom: var(--ion-padding, 16px);
+    padding-top: var(--ion-padding, 16px)
+}
+
+.ion-padding-horizontal {
+    --padding-start: var(--ion-padding, 16px);
+    --padding-end: var(--ion-padding, 16px);
+    padding-inline-end: var(--ion-padding, 16px);
+    padding-inline-start: var(--ion-padding, 16px)
+}
+
+.ion-no-margin {
+    --margin-start: 0;
+    --margin-end: 0;
+    --margin-top: 0;
+    --margin-bottom: 0;
+    margin: 0
+}
+
+.ion-margin {
+    --margin-start: var(--ion-margin, 16px);
+    --margin-end: var(--ion-margin, 16px);
+    --margin-top: var(--ion-margin, 16px);
+    --margin-bottom: var(--ion-margin, 16px);
+    margin-inline-end: var(--ion-margin, 16px);
+    margin-inline-start: var(--ion-margin, 16px);
+    margin-bottom: var(--ion-margin, 16px)
+}
+
+.ion-margin,
+.ion-margin-top {
+    margin-top: var(--ion-margin, 16px)
+}
+
+.ion-margin-top {
+    --margin-top: var(--ion-margin, 16px)
+}
+
+.ion-margin-start {
+    --margin-start: var(--ion-margin, 16px);
+    margin-inline-start: var(--ion-margin, 16px)
+}
+
+.ion-margin-end {
+    --margin-end: var(--ion-margin, 16px);
+    margin-inline-end: var(--ion-margin, 16px)
+}
+
+.ion-margin-bottom {
+    --margin-bottom: var(--ion-margin, 16px);
+    margin-bottom: var(--ion-margin, 16px)
+}
+
+.ion-margin-vertical {
+    --margin-top: var(--ion-margin, 16px);
+    --margin-bottom: var(--ion-margin, 16px);
+    margin-bottom: var(--ion-margin, 16px);
+    margin-top: var(--ion-margin, 16px)
+}
+
+.ion-margin-horizontal {
+    --margin-start: var(--ion-margin, 16px);
+    --margin-end: var(--ion-margin, 16px);
+    margin-inline-end: var(--ion-margin, 16px);
+    margin-inline-start: var(--ion-margin, 16px)
+}
+
+.ion-float-left {
+    float: left !important
+}
+
+.ion-float-right {
+    float: right !important
+}
+
+.ion-float-start {
+    float: left !important
+}
+
+:host-context([dir=rtl]) .ion-float-start {
+    float: right !important
+}
+
+[dir=rtl] .ion-float-start {
+    float: right !important
+}
+
+@supports selector(:dir(rtl)) {
+    .ion-float-start:dir(rtl) {
+        float: right !important
+    }
+}
+
+.ion-float-end {
+    float: right !important
+}
+
+:host-context([dir=rtl]) .ion-float-end {
+    float: left !important
+}
+
+[dir=rtl] .ion-float-end {
+    float: left !important
+}
+
+@supports selector(:dir(rtl)) {
+    .ion-float-end:dir(rtl) {
+        float: left !important
+    }
+}
+
+@media (min-width:576px) {
+    .ion-float-sm-left {
+        float: left !important
+    }
+
+    .ion-float-sm-right {
+        float: right !important
+    }
+
+    .ion-float-sm-start {
+        float: left !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-sm-start {
+        float: right !important
+    }
+
+    [dir=rtl] .ion-float-sm-start {
+        float: right !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-sm-start:dir(rtl) {
+            float: right !important
+        }
+    }
+
+    .ion-float-sm-end {
+        float: right !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-sm-end {
+        float: left !important
+    }
+
+    [dir=rtl] .ion-float-sm-end {
+        float: left !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-sm-end:dir(rtl) {
+            float: left !important
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .ion-float-md-left {
+        float: left !important
+    }
+
+    .ion-float-md-right {
+        float: right !important
+    }
+
+    .ion-float-md-start {
+        float: left !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-md-start {
+        float: right !important
+    }
+
+    [dir=rtl] .ion-float-md-start {
+        float: right !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-md-start:dir(rtl) {
+            float: right !important
+        }
+    }
+
+    .ion-float-md-end {
+        float: right !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-md-end {
+        float: left !important
+    }
+
+    [dir=rtl] .ion-float-md-end {
+        float: left !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-md-end:dir(rtl) {
+            float: left !important
+        }
+    }
+}
+
+@media (min-width:992px) {
+    .ion-float-lg-left {
+        float: left !important
+    }
+
+    .ion-float-lg-right {
+        float: right !important
+    }
+
+    .ion-float-lg-start {
+        float: left !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-lg-start {
+        float: right !important
+    }
+
+    [dir=rtl] .ion-float-lg-start {
+        float: right !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-lg-start:dir(rtl) {
+            float: right !important
+        }
+    }
+
+    .ion-float-lg-end {
+        float: right !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-lg-end {
+        float: left !important
+    }
+
+    [dir=rtl] .ion-float-lg-end {
+        float: left !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-lg-end:dir(rtl) {
+            float: left !important
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .ion-float-xl-left {
+        float: left !important
+    }
+
+    .ion-float-xl-right {
+        float: right !important
+    }
+
+    .ion-float-xl-start {
+        float: left !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-xl-start {
+        float: right !important
+    }
+
+    [dir=rtl] .ion-float-xl-start {
+        float: right !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-xl-start:dir(rtl) {
+            float: right !important
+        }
+    }
+
+    .ion-float-xl-end {
+        float: right !important
+    }
+
+    :host-context([dir=rtl]) .ion-float-xl-end {
+        float: left !important
+    }
+
+    [dir=rtl] .ion-float-xl-end {
+        float: left !important
+    }
+
+    @supports selector(:dir(rtl)) {
+        .ion-float-xl-end:dir(rtl) {
+            float: left !important
+        }
+    }
+}
+
+.ion-text-center {
+    text-align: center !important
+}
+
+.ion-text-justify {
+    text-align: justify !important
+}
+
+.ion-text-start {
+    text-align: start !important
+}
+
+.ion-text-end {
+    text-align: end !important
+}
+
+.ion-text-left {
+    text-align: left !important
+}
+
+.ion-text-right {
+    text-align: right !important
+}
+
+.ion-text-nowrap {
+    white-space: nowrap !important
+}
+
+.ion-text-wrap {
+    white-space: normal !important
+}
+
+@media (min-width:576px) {
+    .ion-text-sm-center {
+        text-align: center !important
+    }
+
+    .ion-text-sm-justify {
+        text-align: justify !important
+    }
+
+    .ion-text-sm-start {
+        text-align: start !important
+    }
+
+    .ion-text-sm-end {
+        text-align: end !important
+    }
+
+    .ion-text-sm-left {
+        text-align: left !important
+    }
+
+    .ion-text-sm-right {
+        text-align: right !important
+    }
+
+    .ion-text-sm-nowrap {
+        white-space: nowrap !important
+    }
+
+    .ion-text-sm-wrap {
+        white-space: normal !important
+    }
+}
+
+@media (min-width:768px) {
+    .ion-text-md-center {
+        text-align: center !important
+    }
+
+    .ion-text-md-justify {
+        text-align: justify !important
+    }
+
+    .ion-text-md-start {
+        text-align: start !important
+    }
+
+    .ion-text-md-end {
+        text-align: end !important
+    }
+
+    .ion-text-md-left {
+        text-align: left !important
+    }
+
+    .ion-text-md-right {
+        text-align: right !important
+    }
+
+    .ion-text-md-nowrap {
+        white-space: nowrap !important
+    }
+
+    .ion-text-md-wrap {
+        white-space: normal !important
+    }
+}
+
+@media (min-width:992px) {
+    .ion-text-lg-center {
+        text-align: center !important
+    }
+
+    .ion-text-lg-justify {
+        text-align: justify !important
+    }
+
+    .ion-text-lg-start {
+        text-align: start !important
+    }
+
+    .ion-text-lg-end {
+        text-align: end !important
+    }
+
+    .ion-text-lg-left {
+        text-align: left !important
+    }
+
+    .ion-text-lg-right {
+        text-align: right !important
+    }
+
+    .ion-text-lg-nowrap {
+        white-space: nowrap !important
+    }
+
+    .ion-text-lg-wrap {
+        white-space: normal !important
+    }
+}
+
+@media (min-width:1200px) {
+    .ion-text-xl-center {
+        text-align: center !important
+    }
+
+    .ion-text-xl-justify {
+        text-align: justify !important
+    }
+
+    .ion-text-xl-start {
+        text-align: start !important
+    }
+
+    .ion-text-xl-end {
+        text-align: end !important
+    }
+
+    .ion-text-xl-left {
+        text-align: left !important
+    }
+
+    .ion-text-xl-right {
+        text-align: right !important
+    }
+
+    .ion-text-xl-nowrap {
+        white-space: nowrap !important
+    }
+
+    .ion-text-xl-wrap {
+        white-space: normal !important
+    }
+}
+
+.ion-text-uppercase {
+    text-transform: uppercase !important
+}
+
+.ion-text-lowercase {
+    text-transform: lowercase !important
+}
+
+.ion-text-capitalize {
+    text-transform: capitalize !important
+}
+
+@media (min-width:576px) {
+    .ion-text-sm-uppercase {
+        text-transform: uppercase !important
+    }
+
+    .ion-text-sm-lowercase {
+        text-transform: lowercase !important
+    }
+
+    .ion-text-sm-capitalize {
+        text-transform: capitalize !important
+    }
+}
+
+@media (min-width:768px) {
+    .ion-text-md-uppercase {
+        text-transform: uppercase !important
+    }
+
+    .ion-text-md-lowercase {
+        text-transform: lowercase !important
+    }
+
+    .ion-text-md-capitalize {
+        text-transform: capitalize !important
+    }
+}
+
+@media (min-width:992px) {
+    .ion-text-lg-uppercase {
+        text-transform: uppercase !important
+    }
+
+    .ion-text-lg-lowercase {
+        text-transform: lowercase !important
+    }
+
+    .ion-text-lg-capitalize {
+        text-transform: capitalize !important
+    }
+}
+
+@media (min-width:1200px) {
+    .ion-text-xl-uppercase {
+        text-transform: uppercase !important
+    }
+
+    .ion-text-xl-lowercase {
+        text-transform: lowercase !important
+    }
+
+    .ion-text-xl-capitalize {
+        text-transform: capitalize !important
+    }
+}
+
+.ion-align-self-start {
+    align-self: flex-start !important
+}
+
+.ion-align-self-end {
+    align-self: flex-end !important
+}
+
+.ion-align-self-center {
+    align-self: center !important
+}
+
+.ion-align-self-stretch {
+    align-self: stretch !important
+}
+
+.ion-align-self-baseline {
+    align-self: baseline !important
+}
+
+.ion-align-self-auto {
+    align-self: auto !important
+}
+
+.ion-wrap {
+    flex-wrap: wrap !important
+}
+
+.ion-nowrap {
+    flex-wrap: nowrap !important
+}
+
+.ion-wrap-reverse {
+    flex-wrap: wrap-reverse !important
+}
+
+.ion-justify-content-start {
+    justify-content: flex-start !important
+}
+
+.ion-justify-content-center {
+    justify-content: center !important
+}
+
+.ion-justify-content-end {
+    justify-content: flex-end !important
+}
+
+.ion-justify-content-around {
+    justify-content: space-around !important
+}
+
+.ion-justify-content-between {
+    justify-content: space-between !important
+}
+
+.ion-justify-content-evenly {
+    justify-content: space-evenly !important
+}
+
+.ion-align-items-start {
+    align-items: flex-start !important
+}
+
+.ion-align-items-center {
+    align-items: center !important
+}
+
+.ion-align-items-end {
+    align-items: flex-end !important
+}
+
+.ion-align-items-stretch {
+    align-items: stretch !important
+}
+
+.ion-align-items-baseline {
+    align-items: baseline !important
+}
+
+.ion-hide,
+.ion-hide-down,
+.ion-hide-up {
+    display: none !important
+}
+
+@media (min-width:576px) {
+    .ion-hide-sm-up {
+        display: none !important
+    }
+}
+
+@media (max-width:575.98px) {
+    .ion-hide-sm-down {
+        display: none !important
+    }
+}
+
+@media (min-width:768px) {
+    .ion-hide-md-up {
+        display: none !important
+    }
+}
+
+@media (max-width:767.98px) {
+    .ion-hide-md-down {
+        display: none !important
+    }
+}
+
+@media (min-width:992px) {
+    .ion-hide-lg-up {
+        display: none !important
+    }
+}
+
+@media (max-width:991.98px) {
+    .ion-hide-lg-down {
+        display: none !important
+    }
+}
+
+@media (min-width:1200px) {
+    .ion-hide-xl-up {
+        display: none !important
+    }
+}
+
+@media (max-width:1199.98px) {
+    .ion-hide-xl-down {
+        display: none !important
+    }
+}
+
+.resize-observer[data-v-b329ee4c] {
+    background-color: transparent;
+    border: none;
+    opacity: 0
+}
+
+.resize-observer[data-v-b329ee4c],
+.resize-observer[data-v-b329ee4c] object {
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1
+}
+
+.v-popper__popper {
+    left: 0;
+    outline: none;
+    top: 0;
+    z-index: 10000
+}
+
+.v-popper__popper.v-popper__popper--hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s, visibility .15s;
+    visibility: hidden
+}
+
+.v-popper__popper.v-popper__popper--shown {
+    opacity: 1;
+    transition: opacity .15s;
+    visibility: visible
+}
+
+.v-popper__popper.v-popper__popper--skip-transition,
+.v-popper__popper.v-popper__popper--skip-transition>.v-popper__wrapper {
+    transition: none !important
+}
+
+.v-popper__backdrop {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.v-popper__inner {
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: relative
+}
+
+.v-popper__inner>div {
+    max-height: inherit;
+    max-width: inherit;
+    position: relative;
+    z-index: 1
+}
+
+.v-popper__arrow-container {
+    height: 10px;
+    position: absolute;
+    width: 10px
+}
+
+.v-popper__popper--arrow-overflow .v-popper__arrow-container,
+.v-popper__popper--no-positioning .v-popper__arrow-container {
+    display: none
+}
+
+.v-popper__arrow-inner,
+.v-popper__arrow-outer {
+    border-style: solid;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0
+}
+
+.v-popper__arrow-inner {
+    border-width: 7px;
+    visibility: hidden
+}
+
+.v-popper__arrow-outer {
+    border-width: 6px
+}
+
+.v-popper__popper[data-popper-placement^=bottom] .v-popper__arrow-inner,
+.v-popper__popper[data-popper-placement^=top] .v-popper__arrow-inner {
+    left: -2px
+}
+
+.v-popper__popper[data-popper-placement^=bottom] .v-popper__arrow-outer,
+.v-popper__popper[data-popper-placement^=top] .v-popper__arrow-outer {
+    left: -1px
+}
+
+.v-popper__popper[data-popper-placement^=top] .v-popper__arrow-inner,
+.v-popper__popper[data-popper-placement^=top] .v-popper__arrow-outer {
+    border-bottom-color: transparent !important;
+    border-bottom-width: 0;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important
+}
+
+.v-popper__popper[data-popper-placement^=top] .v-popper__arrow-inner {
+    top: -2px
+}
+
+.v-popper__popper[data-popper-placement^=bottom] .v-popper__arrow-container {
+    top: 0
+}
+
+.v-popper__popper[data-popper-placement^=bottom] .v-popper__arrow-inner,
+.v-popper__popper[data-popper-placement^=bottom] .v-popper__arrow-outer {
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-top-color: transparent !important;
+    border-top-width: 0
+}
+
+.v-popper__popper[data-popper-placement^=bottom] .v-popper__arrow-inner {
+    top: -4px
+}
+
+.v-popper__popper[data-popper-placement^=bottom] .v-popper__arrow-outer {
+    top: -6px
+}
+
+.v-popper__popper[data-popper-placement^=left] .v-popper__arrow-inner,
+.v-popper__popper[data-popper-placement^=right] .v-popper__arrow-inner {
+    top: -2px
+}
+
+.v-popper__popper[data-popper-placement^=left] .v-popper__arrow-outer,
+.v-popper__popper[data-popper-placement^=right] .v-popper__arrow-outer {
+    top: -1px
+}
+
+.v-popper__popper[data-popper-placement^=right] .v-popper__arrow-inner,
+.v-popper__popper[data-popper-placement^=right] .v-popper__arrow-outer {
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+    border-left-width: 0;
+    border-top-color: transparent !important
+}
+
+.v-popper__popper[data-popper-placement^=right] .v-popper__arrow-inner {
+    left: -4px
+}
+
+.v-popper__popper[data-popper-placement^=right] .v-popper__arrow-outer {
+    left: -6px
+}
+
+.v-popper__popper[data-popper-placement^=left] .v-popper__arrow-container {
+    right: -10px
+}
+
+.v-popper__popper[data-popper-placement^=left] .v-popper__arrow-inner,
+.v-popper__popper[data-popper-placement^=left] .v-popper__arrow-outer {
+    border-bottom-color: transparent !important;
+    border-right-color: transparent !important;
+    border-right-width: 0;
+    border-top-color: transparent !important
+}
+
+.v-popper__popper[data-popper-placement^=left] .v-popper__arrow-inner {
+    left: -2px
+}
+
+.v-popper--theme-tooltip .v-popper__inner {
+    background: #000c;
+    border-radius: 6px;
+    color: #fff;
+    padding: 7px 12px 6px
+}
+
+.v-popper--theme-tooltip .v-popper__arrow-outer {
+    border-color: #000c
+}
+
+.v-popper--theme-dropdown .v-popper__inner {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 6px 30px #0000001a;
+    color: #000
+}
+
+.v-popper--theme-dropdown .v-popper__arrow-inner {
+    border-color: #fff;
+    visibility: visible
+}
+
+.v-popper--theme-dropdown .v-popper__arrow-outer {
+    border-color: #ddd
+}
+
+ion-label[data-v-ed114a71] {
+    text-wrap: nowrap
+}
+
+ion-icon[data-v-ed114a71] {
+    margin-right: 1rem
+}
+
+ion-menu {
+    --max-width: 12rem
+}
+
+.sidebar-list ion-item {
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 .5em;
+    transition: filter .1s ease-in-out
+}
+
+.sidebar-list ion-item:hover {
+    filter: brightness(.925)
+}
+
+.sidebar-list ion-item:active {
+    filter: brightness(.85);
+    transition: none
+}
+
+.sidebar-list ion-item.current-page {
+    --background: rgba(var(--ion-color-base-rgb), .08);
+    color: var(--ion-color-primary-shade, #3171e0)
+}
+
+::-webkit-scrollbar {
+    width: 1rem
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;
+    border-radius: .5em;
+    outline: none
+}
+
+:root {
+    --ion-color-success-light: #a3ffa5;
+    --ion-color-success-light-rgb: 163, 255, 165;
+    --ion-color-success-light-contrast: #000;
+    --ion-color-success-light-contrast-rgb: 0, 0, 0;
+    --ion-color-success-light-shade: #8fe091;
+    --ion-color-success-light-tint: #acffae
+}
+
+.ion-color-success-light {
+    --ion-color-base: var(--ion-color-success-light);
+    --ion-color-base-rgb: var(--ion-color-success-light-rgb);
+    --ion-color-contrast: var(--ion-color-success-light-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-success-light-contrast-rgb);
+    --ion-color-shade: var(--ion-color-success-light-shade);
+    --ion-color-tint: var(--ion-color-success-light-tint)
+}
+
+:root {
+    --ion-color-danger-light: #ffa3a3;
+    --ion-color-danger-light-rgb: 255, 163, 163;
+    --ion-color-danger-light-contrast: #000;
+    --ion-color-danger-light-contrast-rgb: 0, 0, 0;
+    --ion-color-danger-light-shade: #e08f8f;
+    --ion-color-danger-light-tint: #ffacac
+}
+
+.ion-color-danger-light {
+    --ion-color-base: var(--ion-color-danger-light);
+    --ion-color-base-rgb: var(--ion-color-danger-light-rgb);
+    --ion-color-contrast: var(--ion-color-danger-light-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-danger-light-contrast-rgb);
+    --ion-color-shade: var(--ion-color-danger-light-shade);
+    --ion-color-tint: var(--ion-color-danger-light-tint)
+}
+
+:root {
+    --ion-color-warning-light: #feeaa9;
+    --ion-color-warning-light-rgb: 254, 234, 169;
+    --ion-color-warning-light-contrast: #000;
+    --ion-color-warning-light-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-light-shade: #e0ce95;
+    --ion-color-warning-light-tint: #feecb2
+}
+
+.ion-color-warning-light {
+    --ion-color-base: var(--ion-color-warning-light);
+    --ion-color-base-rgb: var(--ion-color-warning-light-rgb);
+    --ion-color-contrast: var(--ion-color-warning-light-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-warning-light-contrast-rgb);
+    --ion-color-shade: var(--ion-color-warning-light-shade);
+    --ion-color-tint: var(--ion-color-warning-light-tint)
+}
